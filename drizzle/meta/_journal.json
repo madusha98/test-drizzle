@@ -1,0 +1,55 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1720274142769,
+      "tag": "0000_gigantic_dragon_man",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1720275933086,
+      "tag": "0001_thick_molecule_man",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1720276006750,
+      "tag": "0002_fluffy_skreet",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1720276227462,
+      "tag": "0003_needy_bloodstrike",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1720278662583,
+      "tag": "0004_dapper_spacker_dave",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1720279071188,
+      "tag": "0005_lumpy_marvel_boy",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1720279110067,
+      "tag": "0006_brainy_the_fallen",
+      "breakpoints": true
+    }
+  ]
+}

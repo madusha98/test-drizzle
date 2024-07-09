@@ -1,0 +1,1 @@
+CREATE INDEX IF NOT EXISTS "search_index" ON "users" USING gin (to_tsvector('english', coalesce("firstName", '') || ' ' || coalesce("last_name", '') || ' ' || coalesce("email", '')));

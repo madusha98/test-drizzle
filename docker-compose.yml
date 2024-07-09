@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./grafana-datasources.yml:/etc/grafana/provisioning/datasources/datasources.yml
+    depends_on:
+      - tempo
+
+  tempo:
+    image: grafana/tempo:latest
+    container_name: tempo
+    volumes:
+      - ./tempo-config.yaml:/etc/tempo/tempo-config.yaml
+      - /tmp/tempo/blocks:/tmp/tempo/blocks
+      - /tmp/tempo/wal:/tmp/tempo/wal
+    ports:
+      - '3200:3200'
+    command: ['-config.file=/etc/tempo/tempo-config.yaml']
+
+  otel-collector:
+    image: otel/opentelemetry-collector:latest
+    container_name: otel-collector
+    volumes:
+      - ./otel-collector-config.yml:/etc/otel-collector-config.yml
+    command: ['--config', '/etc/otel-collector-config.yml']
+    ports:
+      - '4317:4317'
+      - '4318:4318'
