@@ -5,50 +5,36 @@
     {
       "idx": 0,
       "version": "7",
-      "when": 1720274142769,
-      "tag": "0000_gigantic_dragon_man",
+      "when": 1722713588685,
+      "tag": "0000_complex_silverclaw",
       "breakpoints": true
     },
     {
       "idx": 1,
       "version": "7",
-      "when": 1720275933086,
-      "tag": "0001_thick_molecule_man",
+      "when": 1722713776875,
+      "tag": "0001_special_captain_cross",
       "breakpoints": true
     },
     {
       "idx": 2,
       "version": "7",
-      "when": 1720276006750,
-      "tag": "0002_fluffy_skreet",
+      "when": 1722714182358,
+      "tag": "0002_giant_siren",
       "breakpoints": true
     },
     {
       "idx": 3,
       "version": "7",
-      "when": 1720276227462,
-      "tag": "0003_needy_bloodstrike",
+      "when": 1722714745156,
+      "tag": "0003_confused_eternity",
       "breakpoints": true
     },
     {
       "idx": 4,
       "version": "7",
-      "when": 1720278662583,
-      "tag": "0004_dapper_spacker_dave",
-      "breakpoints": true
-    },
-    {
-      "idx": 5,
-      "version": "7",
-      "when": 1720279071188,
-      "tag": "0005_lumpy_marvel_boy",
-      "breakpoints": true
-    },
-    {
-      "idx": 6,
-      "version": "7",
-      "when": 1720279110067,
-      "tag": "0006_brainy_the_fallen",
+      "when": 1722715668418,
+      "tag": "0004_far_lord_hawal",
       "breakpoints": true
     }
   ]

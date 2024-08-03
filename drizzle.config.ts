@@ -5,9 +5,9 @@ export default defineConfig({
   dialect: 'postgresql', // 'postgresql' | 'mysql' | 'sqlite'
   dbCredentials: {
     host: 'localhost',
-    user: 'user',
+    user: 'admin',
     password: 'password',
-    database: 'test_drizzle',
+    database: 'test',
     ssl: false,
   },
 });
