@@ -71,13 +71,25 @@ export class OffersService {
   }
 
   async search(query: string, limit: number = 10, offset: number = 0) {
+    function formatQuery(input) {
+      // Split the input string into words and join them with the '&' operator
+      return input
+        .split(/\s+/) // Split by whitespace
+        .map((word) => `${word}:*`) // Add prefix matching for each word
+        .join(' & '); // Join with 'AND' operator
+    }
+
+    const formattedQuery = formatQuery(query);
+
     const totalCountResult = await this.db.execute(
       sql`
         SELECT COUNT(*) AS total_count
         FROM ${schema.searchableOffers}
-        WHERE (title || ' ' || description || ' ' || category_name || ' ' || vendor_name) &@ ${query}
+        WHERE to_tsvector('english', coalesce(title, '') || ' ' || coalesce(description, '') || ' ' || coalesce(category_name, '') || ' ' || coalesce(vendor_name, ''))
+        @@ to_tsquery('english', ${formattedQuery})
       `,
     );
+
     console.log(totalCountResult);
 
     const totalCount = totalCountResult.rows[0].total_count as number;
@@ -87,7 +99,8 @@ export class OffersService {
       sql`
         SELECT *
         FROM ${schema.searchableOffers}
-        WHERE (title || ' ' || description || ' ' || category_name || ' ' || vendor_name) &@ ${query}
+        WHERE to_tsvector('english', coalesce(title, '') || ' ' || coalesce(description, '') || ' ' || coalesce(category_name, '') || ' ' || coalesce(vendor_name, ''))
+        @@ to_tsquery('english', ${formattedQuery})
         LIMIT ${limit} OFFSET ${offset}
       `,
     );
